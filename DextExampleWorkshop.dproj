@@ -1,0 +1,161 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{B1CAA314-FBDE-4FF1-BC55-7410D6CB44EC}</ProjectGuid>
+        <ProjectVersion>20.3</ProjectVersion>
+        <FrameworkType>None</FrameworkType>
+        <Base>True</Base>
+        <Config Condition="'$(Config)'==''">Debug</Config>
+        <Platform Condition="'$(Platform)'==''">Linux64</Platform>
+        <TargetedPlatforms>129</TargetedPlatforms>
+        <AppType>Console</AppType>
+        <MainSource>DextExampleWorkshop.dpr</MainSource>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Config)'=='Base' or '$(Base)'!=''">
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="('$(Platform)'=='Linux64' and '$(Base)'=='true') or '$(Base_Linux64)'!=''">
+        <Base_Linux64>true</Base_Linux64>
+        <CfgParent>Base</CfgParent>
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="('$(Platform)'=='Win32' and '$(Base)'=='true') or '$(Base_Win32)'!=''">
+        <Base_Win32>true</Base_Win32>
+        <CfgParent>Base</CfgParent>
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="('$(Platform)'=='Win64' and '$(Base)'=='true') or '$(Base_Win64)'!=''">
+        <Base_Win64>true</Base_Win64>
+        <CfgParent>Base</CfgParent>
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Config)'=='Debug' or '$(Cfg_1)'!=''">
+        <Cfg_1>true</Cfg_1>
+        <CfgParent>Base</CfgParent>
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="('$(Platform)'=='Linux64' and '$(Cfg_1)'=='true') or '$(Cfg_1_Linux64)'!=''">
+        <Cfg_1_Linux64>true</Cfg_1_Linux64>
+        <CfgParent>Cfg_1</CfgParent>
+        <Cfg_1>true</Cfg_1>
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="('$(Platform)'=='Win32' and '$(Cfg_1)'=='true') or '$(Cfg_1_Win32)'!=''">
+        <Cfg_1_Win32>true</Cfg_1_Win32>
+        <CfgParent>Cfg_1</CfgParent>
+        <Cfg_1>true</Cfg_1>
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Config)'=='Release' or '$(Cfg_2)'!=''">
+        <Cfg_2>true</Cfg_2>
+        <CfgParent>Base</CfgParent>
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Base)'!=''">
+        <DCC_DcuOutput>.\$(Platform)\$(Config)</DCC_DcuOutput>
+        <DCC_ExeOutput>.\$(Platform)\$(Config)</DCC_ExeOutput>
+        <DCC_E>false</DCC_E>
+        <DCC_N>false</DCC_N>
+        <DCC_S>false</DCC_S>
+        <DCC_F>false</DCC_F>
+        <DCC_K>false</DCC_K>
+        <DCC_Namespace>System;Xml;Data;Datasnap;Web;Soap;$(DCC_Namespace)</DCC_Namespace>
+        <SanitizedProjectName>DextExampleWorkshop</SanitizedProjectName>
+        <DCC_UnitSearchPath>modules\.dcp;..\modules\.dcp;modules\.dcu;..\modules\.dcu;modules;..\modules;modules\dext\Apps\CLI\Commands;..\modules\dext\Apps\CLI\Commands;modules\dext\Apps\CLI\Hubs;..\modules\dext\Apps\CLI\Hubs;modules\dext\Apps\CLI\Tools;..\modules\dext\Apps\CLI\Tools;modules\dext\Apps\Sidecar;..\modules\dext\Apps\Sidecar;modules\dext\Apps\Sidecar\Lib;..\modules\dext\Apps\Sidecar\Lib;modules\dext\Benchmarks\CollectionsPerformance;..\modules\dext\Benchmarks\CollectionsPerformance;modules\dext\Benchmarks\GenericsScalability;..\modules\dext\Benchmarks\GenericsScalability;modules\dext\Benchmarks\GenericsScalability\Generated;..\modules\dext\Benchmarks\GenericsScalability\Generated;modules\dext\Benchmarks\Sources;..\modules\dext\Benchmarks\Sources;modules\dext\Benchmarks\ZeroAlloc;..\modules\dext\Benchmarks\ZeroAlloc;modules\dext\Community\Drivers\UniDAC\Sources;..\modules\dext\Community\Drivers\UniDAC\Sources;modules\dext\Community\Drivers\UniDAC\Tests;..\modules\dext\Community\Drivers\UniDAC\Tests;modules\dext\Docs\Talks\WebinarDemo\Domain;..\modules\dext\Docs\Talks\WebinarDemo\Domain;modules\dext\Docs\Talks\WebinarDemo\Infrastructure;..\modules\dext\Docs\Talks\WebinarDemo\Infrastructure;modules\dext\Docs\Talks\WebinarDemo\Presentation;..\modules\dext\Docs\Talks\WebinarDemo\Presentation;modules\dext\Docs\Talks\WebinarDemo\Tests;..\modules\dext\Docs\Talks\WebinarDemo\Tests;modules\dext\Examples\02-Web\Web.ControllerExample;..\modules\dext\Examples\02-Web\Web.ControllerExample;modules\dext\Examples\02-Web\Web.Http2Framing;..\modules\dext\Examples\02-Web\Web.Http2Framing;modules\dext\Examples\02-Web\Web.SwaggerControllerExample;..\modules\dext\Examples\02-Web\Web.SwaggerControllerExample;modules\dext\Examples\02-Web\Web.SwaggerExample;..\modules\dext\Examples\02-Web\Web.SwaggerExample;modules\dext\Examples\03-Data\Dext.Examples.ComplexQuerying\Domain;..\modules\dext\Examples\03-Data\Dext.Examples.ComplexQuerying\Domain;modules\dext\Examples\03-Data\Dext.Examples.ComplexQuerying\Features;..\modules\dext\Examples\03-Data\Dext.Examples.ComplexQuerying\Features;modules\dext\Examples\03-Data\Dext.Examples.MultiTenancy\Domain;..\modules\dext\Examples\03-Data\Dext.Examples.MultiTenancy\Domain;modules\dext\Examples\03-Data\Dext.Examples.MultiTenancy\Features;..\modules\dext\Examples\03-Data\Dext.Examples.MultiTenancy\Features;modules\dext\Examples\03-Data\Dext.Examples.MultiTenancy\Middleware;..\modules\dext\Examples\03-Data\Dext.Examples.MultiTenancy\Middleware;modules\dext\Examples\03-Data\Orm.EntityDemo;..\modules\dext\Examples\03-Data\Orm.EntityDemo;modules\dext\Examples\03-Data\Orm.EntityStyles;..\modules\dext\Examples\03-Data\Orm.EntityStyles;modules\dext\Examples\03-Data\Web.SmartPropsDemo;..\modules\dext\Examples\03-Data\Web.SmartPropsDemo;modules\dext\Examples\04-Advanced\Grpc.EntityDataSet.Demo;..\modules\dext\Examples\04-Advanced\Grpc.EntityDataSet.Demo;modules\dext\Examples\04-Advanced\MCP.FullDemo;..\modules\dext\Examples\04-Advanced\MCP.FullDemo;modules\dext\Examples\04-Advanced\MCP.VclDbDemo;..\modules\dext\Examples\04-Advanced\MCP.VclDbDemo;modules\dext\Examples\04-Advanced\Net.RestClient.Demo;..\modules\dext\Examples\04-Advanced\Net.RestClient.Demo;modules\dext\Examples\04-Advanced\WebStencilsDemo\Models;..\modules\dext\Examples\04-Advanced\WebStencilsDemo\Models;modules\dext\Examples\04-Advanced\WebStencilsDemo;..\modules\dext\Examples\04-Advanced\WebStencilsDemo;modules\dext\Examples\05-UI\Desktop.MVU.Counter;..\modules\dext\Examples\05-UI\Desktop.MVU.Counter;modules\dext\Examples\05-UI\Desktop.MVU.CounterFrame;..\modules\dext\Examples\05-UI\Desktop.MVU.CounterFrame;modules\dext\Examples\05-UI\Desktop.MVVM.CustomerCRUD\App;..\modules\dext\Examples\05-UI\Desktop.MVVM.CustomerCRUD\App;modules\dext\Examples\05-UI\Desktop.MVVM.CustomerCRUD\Data;..\modules\dext\Examples\05-UI\Desktop.MVVM.CustomerCRUD\Data;modules\dext\Examples\05-UI\Desktop.MVVM.CustomerCRUD\Features\Customers;..\modules\dext\Examples\05-UI\Desktop.MVVM.CustomerCRUD\Features\Customers;modules\dext\Examples\05-UI\Desktop.MVVM.CustomerCRUD\Features\Layout;..\modules\dext\Examples\05-UI\Desktop.MVVM.CustomerCRUD\Features\Layout;modules\dext\Examples\05-UI\VCLMemoLog;..\modules\dext\Examples\05-UI\VCLMemoLog;modules\dext\Examples\07-UseCases\Core.EventBusDemo;..\modules\dext\Examples\07-UseCases\Core.EventBusDemo;modules\dext\Examples\07-UseCases\Web.AirFlow;..\modules\dext\Examples\07-UseCases\Web.AirFlow;modules\dext\Examples\07-UseCases\Web.Dext.Starter.Admin;..\modules\dext\Examples\07-UseCases\Web.Dext.Starter.Admin;modules\dext\Examples\07-UseCases\Web.Dext.Starter.Admin\Domain;..\modules\dext\Examples\07-UseCases\Web.Dext.Starter.Admin\Domain;modules\dext\Examples\07-UseCases\Web.Dext.Starter.Admin\Domain\Entities;..\modules\dext\Examples\07-UseCases\Web.Dext.Starter.Admin\Domain\Entities;modules\dext\Examples\07-UseCases\Web.Dext.Starter.Admin\Features\Auth;..\modules\dext\Examples\07-UseCases\Web.Dext.Starter.Admin\Features\Auth;modules\dext\Examples\07-UseCases\Web.Dext.Starter.Admin\Features\Customers;..\modules\dext\Examples\07-UseCases\Web.Dext.Starter.Admin\Features\Customers;modules\dext\Examples\07-UseCases\Web.Dext.Starter.Admin\Features\Dashboard;..\modules\dext\Examples\07-UseCases\Web.Dext.Starter.Admin\Features\Dashboard;modules\dext\Examples\07-UseCases\Web.Dext.Starter.Admin\Features\Settings;..\modules\dext\Examples\07-UseCases\Web.Dext.Starter.Admin\Features\Settings;modules\dext\Examples\07-UseCases\Web.Dext.Starter.Admin\Features\Shared;..\modules\dext\Examples\07-UseCases\Web.Dext.Starter.Admin\Features\Shared;modules\dext\Examples\07-UseCases\Web.DextStore;..\modules\dext\Examples\07-UseCases\Web.DextStore;modules\dext\Examples\07-UseCases\Web.EventBusDemo;..\modules\dext\Examples\07-UseCases\Web.EventBusDemo;modules\dext\Examples\07-UseCases\Web.EventHub\Data;..\modules\dext\Examples\07-UseCases\Web.EventHub\Data;modules\dext\Examples\07-UseCases\Web.EventHub\Domain;..\modules\dext\Examples\07-UseCases\Web.EventHub\Domain;modules\dext\Examples\07-UseCases\Web.EventHub\Server;..\modules\dext\Examples\07-UseCases\Web.EventHub\Server;modules\dext\Examples\07-UseCases\Web.EventHub\Services;..\modules\dext\Examples\07-UseCases\Web.EventHub\Services;modules\dext\Examples\07-UseCases\Web.EventHub\Tests;..\modules\dext\Examples\07-UseCases\Web.EventHub\Tests;modules\dext\Examples\07-UseCases\Web.FoodDelivery;..\modules\dext\Examples\07-UseCases\Web.FoodDelivery;modules\dext\Examples\07-UseCases\Web.HelpDesk\Data;..\modules\dext\Examples\07-UseCases\Web.HelpDesk\Data;modules\dext\Examples\07-UseCases\Web.HelpDesk\Domain;..\modules\dext\Examples\07-UseCases\Web.HelpDesk\Domain;modules\dext\Examples\07-UseCases\Web.HelpDesk\Server;..\modules\dext\Examples\07-UseCases\Web.HelpDesk\Server;modules\dext\Examples\07-UseCases\Web.HelpDesk\Services;..\modules\dext\Examples\07-UseCases\Web.HelpDesk\Services;modules\dext\Examples\07-UseCases\Web.HelpDesk\Tests;..\modules\dext\Examples\07-UseCases\Web.HelpDesk\Tests;modules\dext\Examples\07-UseCases\Web.OrderAPI;..\modules\dext\Examples\07-UseCases\Web.OrderAPI;modules\dext\Examples\07-UseCases\Web.SalesSystem\Data;..\modules\dext\Examples\07-UseCases\Web.SalesSystem\Data;modules\dext\Examples\07-UseCases\Web.SalesSystem\Domain;..\modules\dext\Examples\07-UseCases\Web.SalesSystem\Domain;modules\dext\Examples\07-UseCases\Web.SalesSystem\Server;..\modules\dext\Examples\07-UseCases\Web.SalesSystem\Server;modules\dext\Examples\07-UseCases\Web.SalesSystem\Tests;..\modules\dext\Examples\07-UseCases\Web.SalesSystem\Tests;modules\dext\Examples\07-UseCases\Web.StreamingDemo;..\modules\dext\Examples\07-UseCases\Web.StreamingDemo;modules\dext\Examples\07-UseCases\Web.StreamingDemo\Features\Download;..\modules\dext\Examples\07-UseCases\Web.StreamingDemo\Features\Download;modules\dext\Examples\07-UseCases\Web.StreamingDemo\Features\Upload;..\modules\dext\Examples\07-UseCases\Web.StreamingDemo\Features\Upload;modules\dext\Examples\07-UseCases\Web.TaskFlowAPI;..\modules\dext\Examples\07-UseCases\Web.TaskFlowAPI;modules\dext\Examples\07-UseCases\Web.TicketSales\Data;..\modules\dext\Examples\07-UseCases\Web.TicketSales\Data;modules\dext\Examples\07-UseCases\Web.TicketSales\Domain;..\modules\dext\Examples\07-UseCases\Web.TicketSales\Domain;modules\dext\Examples\07-UseCases\Web.TicketSales\Server;..\modules\dext\Examples\07-UseCases\Web.TicketSales\Server;modules\dext\Examples\07-UseCases\Web.TicketSales\Services;..\modules\dext\Examples\07-UseCases\Web.TicketSales\Services;modules\dext\Examples\07-UseCases\Web.TicketSales\Tests;..\modules\dext\Examples\07-UseCases\Web.TicketSales\Tests;modules\dext\Examples\08-AI\DextGemini;..\modules\dext\Examples\08-AI\DextGemini;modules\dext\Examples\09-ActiveArchitecture\Desktop.BasicActiveArchitecture.Demo\Domain;..\modules\dext\Examples\09-ActiveArchitecture\Desktop.BasicActiveArchitecture.Demo\Domain;modules\dext\Examples\09-ActiveArchitecture\Desktop.BasicActiveArchitecture.Demo\Infra;..\modules\dext\Examples\09-ActiveArchitecture\Desktop.BasicActiveArchitecture.Demo\Infra;modules\dext\Examples\09-ActiveArchitecture\Desktop.BasicActiveArchitecture.Demo\Presentation;..\modules\dext\Examples\09-ActiveArchitecture\Desktop.BasicActiveArchitecture.Demo\Presentation;modules\dext\Examples\09-ActiveArchitecture\Desktop.BasicActiveArchitecture.Demo\Tests;..\modules\dext\Examples\09-ActiveArchitecture\Desktop.BasicActiveArchitecture.Demo\Tests;modules\dext\Examples\09-ActiveArchitecture\Desktop.EntityDataSet.Demo;..\modules\dext\Examples\09-ActiveArchitecture\Desktop.EntityDataSet.Demo;modules\dext\External\DelphiAST\Demo\Parser;..\modules\dext\External\DelphiAST\Demo\Parser;modules\dext\External\DelphiAST\Demo\ProjectIndexer;..\modules\dext\External\DelphiAST\Demo\ProjectIndexer;modules\dext\External\DelphiAST\Demo\ProjectIndexer\demo;..\modules\dext\External\DelphiAST\Demo\ProjectIndexer\demo;modules\dext\External\DelphiAST\Demo\ProjectIndexer\demo\sub1;..\modules\dext\External\DelphiAST\Demo\ProjectIndexer\demo\sub1;modules\dext\External\DelphiAST\Demo\ProjectIndexer\demo\sub1inc;..\modules\dext\External\DelphiAST\Demo\ProjectIndexer\demo\sub1inc;modules\dext\External\DelphiAST\Demo\ProjectIndexer\demo\sub2;..\modules\dext\External\DelphiAST\Demo\ProjectIndexer\demo\sub2;modules\dext\External\DelphiAST\Demo\ProjectIndexer\demo\sub2inc;..\modules\dext\External\DelphiAST\Demo\ProjectIndexer\demo\sub2inc;modules\dext\External\DelphiAST\Demo\ProjectIndexer\demo\subinc;..\modules\dext\External\DelphiAST\Demo\ProjectIndexer\demo\subinc;modules\dext\External\DelphiAST\Source;..\modules\dext\External\DelphiAST\Source;modules\dext\External\DelphiAST\Source\FreePascalSupport;..\modules\dext\External\DelphiAST\Source\FreePascalSupport;modules\dext\External\DelphiAST\Source\SimpleParser;..\modules\dext\External\DelphiAST\Source\SimpleParser;modules\dext\External\DelphiAST\Test\Snippets;..\modules\dext\External\DelphiAST\Test\Snippets;modules\dext\External\DelphiAST\Test;..\modules\dext\External\DelphiAST\Test;modules\dext\External\Spring4D;..\modules\dext\External\Spring4D;modules\dext\Sources\AI\MCP;..\modules\dext\Sources\AI\MCP;modules\dext\Sources\Common;..\modules\dext\Sources\Common;modules\dext\Sources\Core\Base;..\modules\dext\Sources\Core\Base;modules\dext\Sources\Core;..\modules\dext\Sources\Core;modules\dext\Sources\Core\Interception;..\modules\dext\Sources\Core\Interception;modules\dext\Sources\Core\Json;..\modules\dext\Sources\Core\Json;modules\dext\Sources\Dashboard;..\modules\dext\Sources\Dashboard;modules\dext\Sources\Data;..\modules\dext\Sources\Data;modules\dext\Sources\Debug;..\modules\dext\Sources\Debug;modules\dext\Sources\Design;..\modules\dext\Sources\Design;modules\dext\Sources\Events;..\modules\dext\Sources\Events;modules\dext\Sources\Hosting\CLI;..\modules\dext\Sources\Hosting\CLI;modules\dext\Sources\Hosting\CLI\Logger;..\modules\dext\Sources\Hosting\CLI\Logger;modules\dext\Sources\Hosting\CLI\Tools;..\modules\dext\Sources\Hosting\CLI\Tools;modules\dext\Sources\Hosting;..\modules\dext\Sources\Hosting;modules\dext\Sources\Hubs;..\modules\dext\Sources\Hubs;modules\dext\Sources\Hubs\Transports;..\modules\dext\Sources\Hubs\Transports;modules\dext\Sources\Net;..\modules\dext\Sources\Net;modules\dext\Sources\Performance;..\modules\dext\Sources\Performance;modules\dext\Sources\Server;..\modules\dext\Sources\Server;modules\dext\Sources\Testing\Design;..\modules\dext\Sources\Testing\Design;modules\dext\Sources\Testing;..\modules\dext\Sources\Testing;modules\dext\Sources\UI;..\modules\dext\Sources\UI;modules\dext\Sources\Web;..\modules\dext\Sources\Web;modules\dext\Tests\Collections;..\modules\dext\Tests\Collections;modules\dext\Tests\Common;..\modules\dext\Tests\Common;modules\dext\Tests\Core;..\modules\dext\Tests\Core;modules\dext\Tests\Core\UnitTests;..\modules\dext\Tests\Core\UnitTests;modules\dext\Tests\Dext.Rest.Tests;..\modules\dext\Tests\Dext.Rest.Tests;modules\dext\Tests\Dext.UI;..\modules\dext\Tests\Dext.UI;modules\dext\Tests\Entity;..\modules\dext\Tests\Entity;modules\dext\Tests\Entity\ScaffoldFB;..\modules\dext\Tests\Entity\ScaffoldFB;modules\dext\Tests\Entity\UnitTests;..\modules\dext\Tests\Entity\UnitTests;modules\dext\Tests\Hubs;..\modules\dext\Tests\Hubs;modules\dext\Tests\ModelBinding;..\modules\dext\Tests\ModelBinding;modules\dext\Tests\Net;..\modules\dext\Tests\Net;modules\dext\Tests\ScaffoldingValidation;..\modules\dext\Tests\ScaffoldingValidation;modules\dext\Tests\ServerCors;..\modules\dext\Tests\ServerCors;modules\dext\Tests\Templating\UnitTests;..\modules\dext\Tests\Templating\UnitTests;modules\dext\Tests;..\modules\dext\Tests;modules\dext\Tests\Testing;..\modules\dext\Tests\Testing;modules\dext\Tests\VclOpenSslTest;..\modules\dext\Tests\VclOpenSslTest;modules\dext\Tests\Web;..\modules\dext\Tests\Web;modules\dext\Tests\Web.FrameworkTests;..\modules\dext\Tests\Web.FrameworkTests;modules\dext\Tools\DextFacadeGenerator;..\modules\dext\Tools\DextFacadeGenerator;$(DCC_UnitSearchPath)</DCC_UnitSearchPath>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Base_Linux64)'!=''">
+        <DCC_UsePackage>DataSnapServer;fmx;emshosting;DbxCommonDriver;bindengine;FireDACCommonODBC;emsclient;FireDACCommonDriver;IndyProtocols;dbxcds;emsedge;bindcompfmx;inetdb;FireDACSqliteDriver;DbxClientDriver;FireDACASADriver;soapmidas;fmxFireDAC;dbexpress;FireDACInfxDriver;inet;DataSnapCommon;dbrtl;FireDACOracleDriver;CustomIPTransport;FireDACMSSQLDriver;DataSnapIndy10ServerTransport;DataSnapConnectors;FireDACMongoDBDriver;IndySystem;FireDACTDataDriver;bindcomp;FireDACCommon;DataSnapServerMidas;FireDACODBCDriver;emsserverresource;inetstn;IndyCore;RESTBackendComponents;rtl;FireDACMySQLDriver;FireDACADSDriver;RESTComponents;dsnapxml;DataSnapClient;DataSnapFireDAC;emsclientfiredac;FireDACPgDriver;FireDAC;xmlrtl;dsnap;CloudService;FireDACDb2Driver;DataSnapNativeClient;DatasnapConnectorsFreePascal;soaprtl;soapserver;FireDACIBDriver;$(DCC_UsePackage)</DCC_UsePackage>
+        <DCC_ExeOutput>.\bin</DCC_ExeOutput>
+        <DCC_DcuOutput>.\bin</DCC_DcuOutput>
+        <Debugger_Launcher>/usr/bin/gnome-terminal -- &quot;%debuggee%&quot;</Debugger_Launcher>
+        <Manifest_File>(None)</Manifest_File>
+        <AppDPIAwarenessMode>none</AppDPIAwarenessMode>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Base_Win32)'!=''">
+        <DCC_UsePackage>vclwinx;DataSnapServer;fmx;emshosting;vclie;DbxCommonDriver;bindengine;IndyIPCommon;VCLRESTComponents;DBXMSSQLDriver;FireDACCommonODBC;emsclient;FireDACCommonDriver;IndyProtocols;vclx;Skia.Package.RTL;IndyIPClient;dbxcds;vcledge;bindcompvclwinx;emsedge;bindcompfmx;DBXFirebirdDriver;inetdb;FireDACSqliteDriver;DbxClientDriver;FireDACASADriver;soapmidas;vclactnband;fmxFireDAC;dbexpress;FireDACInfxDriver;DBXMySQLDriver;VclSmp;inet;DataSnapCommon;fmxase;vcltouch;DBXOdbcDriver;dbrtl;FireDACDBXDriver;Skia.Package.FMX;FireDACOracleDriver;fmxdae;FireDACMSAccDriver;CustomIPTransport;FireDACMSSQLDriver;DataSnapIndy10ServerTransport;DataSnapConnectors;vcldsnap;DBXInterBaseDriver;FireDACMongoDBDriver;IndySystem;FireDACTDataDriver;Skia.Package.VCL;vcldb;vclFireDAC;bindcomp;FireDACCommon;DataSnapServerMidas;FireDACODBCDriver;emsserverresource;inetstn;IndyCore;RESTBackendComponents;bindcompdbx;rtl;FireDACMySQLDriver;FireDACADSDriver;RESTComponents;DBXSqliteDriver;vcl;IndyIPServer;dsnapxml;dsnapcon;DataSnapClient;DataSnapProviderClient;adortl;DBXSybaseASEDriver;DBXDb2Driver;vclimg;DataSnapFireDAC;emsclientfiredac;FireDACPgDriver;FireDAC;FireDACDSDriver;inetdbxpress;xmlrtl;tethering;bindcompvcl;dsnap;CloudService;DBXSybaseASADriver;DBXOracleDriver;FireDACDb2Driver;DBXInformixDriver;fmxobj;bindcompvclsmp;DataSnapNativeClient;DatasnapConnectorsFreePascal;soaprtl;soapserver;FireDACIBDriver;$(DCC_UsePackage)</DCC_UsePackage>
+        <DCC_Namespace>Winapi;System.Win;Data.Win;Datasnap.Win;Web.Win;Soap.Win;Xml.Win;Bde;$(DCC_Namespace)</DCC_Namespace>
+        <BT_BuildType>Debug</BT_BuildType>
+        <VerInfo_Keys>CompanyName=;FileDescription=$(MSBuildProjectName);FileVersion=1.0.0.0;InternalName=;LegalCopyright=;LegalTrademarks=;OriginalFilename=;ProgramID=com.embarcadero.$(MSBuildProjectName);ProductName=$(MSBuildProjectName);ProductVersion=1.0.0.0;Comments=</VerInfo_Keys>
+        <VerInfo_Locale>1033</VerInfo_Locale>
+        <DCC_ConsoleTarget>true</DCC_ConsoleTarget>
+        <UWP_DelphiLogo44>$(BDS)\bin\Artwork\Windows\UWP\delphi_UwpDefault_44.png</UWP_DelphiLogo44>
+        <UWP_DelphiLogo150>$(BDS)\bin\Artwork\Windows\UWP\delphi_UwpDefault_150.png</UWP_DelphiLogo150>
+        <DCC_ExeOutput>.\bin</DCC_ExeOutput>
+        <DCC_DcuOutput>.\bin</DCC_DcuOutput>
+        <Manifest_File>(None)</Manifest_File>
+        <AppDPIAwarenessMode>none</AppDPIAwarenessMode>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Base_Win64)'!=''">
+        <DCC_UsePackage>vclwinx;DataSnapServer;fmx;emshosting;vclie;DbxCommonDriver;bindengine;IndyIPCommon;VCLRESTComponents;DBXMSSQLDriver;FireDACCommonODBC;emsclient;FireDACCommonDriver;IndyProtocols;vclx;IndyIPClient;dbxcds;vcledge;bindcompvclwinx;emsedge;bindcompfmx;DBXFirebirdDriver;inetdb;FireDACSqliteDriver;DbxClientDriver;FireDACASADriver;soapmidas;vclactnband;fmxFireDAC;dbexpress;FireDACInfxDriver;DBXMySQLDriver;VclSmp;inet;DataSnapCommon;fmxase;vcltouch;DBXOdbcDriver;dbrtl;FireDACDBXDriver;FireDACOracleDriver;fmxdae;FireDACMSAccDriver;CustomIPTransport;FireDACMSSQLDriver;DataSnapIndy10ServerTransport;DataSnapConnectors;vcldsnap;DBXInterBaseDriver;FireDACMongoDBDriver;IndySystem;FireDACTDataDriver;Skia.Package.VCL;vcldb;vclFireDAC;bindcomp;FireDACCommon;DataSnapServerMidas;FireDACODBCDriver;emsserverresource;inetstn;IndyCore;RESTBackendComponents;bindcompdbx;rtl;FireDACMySQLDriver;FireDACADSDriver;RESTComponents;DBXSqliteDriver;vcl;IndyIPServer;dsnapxml;dsnapcon;DataSnapClient;DataSnapProviderClient;adortl;DBXSybaseASEDriver;DBXDb2Driver;vclimg;DataSnapFireDAC;emsclientfiredac;FireDACPgDriver;FireDAC;FireDACDSDriver;inetdbxpress;xmlrtl;tethering;bindcompvcl;dsnap;CloudService;DBXSybaseASADriver;DBXOracleDriver;FireDACDb2Driver;DBXInformixDriver;fmxobj;bindcompvclsmp;DataSnapNativeClient;DatasnapConnectorsFreePascal;soaprtl;soapserver;FireDACIBDriver;$(DCC_UsePackage)</DCC_UsePackage>
+        <DCC_ConsoleTarget>true</DCC_ConsoleTarget>
+        <UWP_DelphiLogo44>$(BDS)\bin\Artwork\Windows\UWP\delphi_UwpDefault_44.png</UWP_DelphiLogo44>
+        <UWP_DelphiLogo150>$(BDS)\bin\Artwork\Windows\UWP\delphi_UwpDefault_150.png</UWP_DelphiLogo150>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Cfg_1)'!=''">
+        <DCC_Define>DEBUG;$(DCC_Define)</DCC_Define>
+        <DCC_DebugDCUs>true</DCC_DebugDCUs>
+        <DCC_Optimize>false</DCC_Optimize>
+        <DCC_GenerateStackFrames>true</DCC_GenerateStackFrames>
+        <DCC_DebugInfoInExe>true</DCC_DebugInfoInExe>
+        <DCC_RemoteDebug>true</DCC_RemoteDebug>
+        <DCC_IntegerOverflowCheck>true</DCC_IntegerOverflowCheck>
+        <DCC_RangeChecking>true</DCC_RangeChecking>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Cfg_1_Linux64)'!=''">
+        <Debugger_Launcher>/usr/bin/gnome-terminal -- &quot;%debuggee%&quot;</Debugger_Launcher>
+        <Manifest_File>(None)</Manifest_File>
+        <AppDPIAwarenessMode>none</AppDPIAwarenessMode>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Cfg_1_Win32)'!=''">
+        <DCC_RemoteDebug>false</DCC_RemoteDebug>
+        <VerInfo_Locale>1033</VerInfo_Locale>
+        <Manifest_File>(None)</Manifest_File>
+        <AppDPIAwarenessMode>none</AppDPIAwarenessMode>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Cfg_2)'!=''">
+        <DCC_LocalDebugSymbols>false</DCC_LocalDebugSymbols>
+        <DCC_Define>RELEASE;$(DCC_Define)</DCC_Define>
+        <DCC_SymbolReferenceInfo>0</DCC_SymbolReferenceInfo>
+        <DCC_DebugInformation>0</DCC_DebugInformation>
+    </PropertyGroup>
+    <ItemGroup>
+        <DelphiCompile Include="$(MainSource)">
+            <MainSource>MainSource</MainSource>
+        </DelphiCompile>
+        <BuildConfiguration Include="Base">
+            <Key>Base</Key>
+        </BuildConfiguration>
+        <BuildConfiguration Include="Debug">
+            <Key>Cfg_1</Key>
+            <CfgParent>Base</CfgParent>
+        </BuildConfiguration>
+        <BuildConfiguration Include="Release">
+            <Key>Cfg_2</Key>
+            <CfgParent>Base</CfgParent>
+        </BuildConfiguration>
+    </ItemGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Delphi.Personality.12</Borland.Personality>
+        <Borland.ProjectType>Application</Borland.ProjectType>
+        <BorlandProject>
+            <Delphi.Personality>
+                <Source>
+                    <Source Name="MainSource">DextExampleWorkshop.dpr</Source>
+                </Source>
+                <Excluded_Packages>
+                    <Excluded_Packages Name="$(BDSBIN)\dcloffice2k370.bpl">Microsoft Office 2000 Sample Automation Server Wrapper Components</Excluded_Packages>
+                    <Excluded_Packages Name="$(BDSBIN)\dclofficexp370.bpl">Microsoft Office XP Sample Automation Server Wrapper Components</Excluded_Packages>
+                </Excluded_Packages>
+            </Delphi.Personality>
+            <Deployment Version="5"/>
+            <Platforms>
+                <Platform value="Linux64">True</Platform>
+                <Platform value="Win32">True</Platform>
+                <Platform value="Win64">False</Platform>
+            </Platforms>
+        </BorlandProject>
+        <ProjectFileVersion>12</ProjectFileVersion>
+    </ProjectExtensions>
+    <Import Project="$(BDS)\Bin\CodeGear.Delphi.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Delphi.Targets')"/>
+    <Import Project="$(APPDATA)\Embarcadero\$(BDSAPPDATABASEDIR)\$(PRODUCTVERSION)\UserTools.proj" Condition="Exists('$(APPDATA)\Embarcadero\$(BDSAPPDATABASEDIR)\$(PRODUCTVERSION)\UserTools.proj')"/>
+    <Import Project="$(MSBuildProjectName).deployproj" Condition="Exists('$(MSBuildProjectName).deployproj')"/>
+</Project>

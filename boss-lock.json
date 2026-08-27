@@ -1,0 +1,14 @@
+{
+	"hash": "d41d8cd98f00b204e9800998ecf8427e",
+	"updated": "2026-08-26T21:33:37.5348844-03:00",
+	"installedModules": {
+		"https://github.com/dotpas/dext": {
+			"name": "dext",
+			"version": "main",
+			"hash": "8dec71f6cfedc285c17a042bc6ecfb77",
+			"artifacts": {},
+			"failed": false,
+			"changed": false
+		}
+	}
+}
