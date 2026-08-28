@@ -49,8 +49,25 @@ begin
         App.MapGet('/',
           procedure(Context: IHttpContext)
           begin
-            Context.Response.Write('Aplicação construída utilizando o Dext Framework');
-          end);
+            Context.Response.StatusCode := 200;
+            Context.Response.ContentType := 'text/html; charset=utf-8';
+            //#2196F3 - Azul
+            //#FF0000 - Vermelho
+            Context.Response.Write(
+              '<!DOCTYPE html>' +
+              '<html>' +
+              '<head>' +
+              '  <title>Página Azul</title>' +
+              '</head>' +
+              '<body style="margin:0; background:#2196F3; min-height:100vh;">' +
+              '  <h1 style="color:white; text-align:center; padding-top:100px;">' +
+              '    Aplicação construída utilizando o Dext Framework <br/>' +
+              '    Página Azul' +
+              '  </h1>' +
+              '</body>' +
+              '</html>'
+            );
+         end);
 
         // GET /health - Health check endpoint
         App.MapGet('/health',
