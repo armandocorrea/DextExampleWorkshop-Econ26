@@ -541,7 +541,10 @@ GitHubActionsPushECR
             "Effect": "Allow",
             "Action": [
                 "ecr:BatchCheckLayerAvailability",
+                "ecr:BatchGetImage",
                 "ecr:CompleteLayerUpload",
+                "ecr:DescribeImages",
+                "ecr:DescribeRepositories",
                 "ecr:InitiateLayerUpload",
                 "ecr:PutImage",
                 "ecr:UploadLayerPart"
